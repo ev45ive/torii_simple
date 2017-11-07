@@ -7,13 +7,15 @@ import { ProjectsListComponent } from './projects-list.component';
 import { Routing } from "./app.routing";
 import { HttpClientModule } from "@angular/common/http";
 import { ProjectCreateComponent } from './project-create.component';
+import { ProjectEditComponent } from './project-edit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsListComponent,
-    ProjectCreateComponent
+    ProjectCreateComponent,
+    ProjectEditComponent
   ],
   imports: [
     BrowserModule,
