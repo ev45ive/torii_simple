@@ -7,12 +7,16 @@ import { HttpClient } from "@angular/common/http";
     <p>
       projects-list works!
     </p>
-    <ul>
-      <li *ngFor="let project of list">
-        {{ project.name }}
-        <button [routerLink]="['project-edit',project.id]">Edit</button>
-      </li>
-    </ul>
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let project of list">
+        <td>{{ project.name }}</td>
+        <td><button [routerLink]="['project-edit',project.id]">Edit</button></td>
+      </tr>
+    </table>
 
     <hr>
     <button routerLink="project-create">Utworz nowy</button>
