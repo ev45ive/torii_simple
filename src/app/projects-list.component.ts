@@ -7,6 +7,8 @@ import { HttpClient } from "@angular/common/http";
     <p>
       projects-list works!
     </p>
+    <input class="form-control" placeholder="Wpisz zapytanie..." ngModel (ngModelChange)="search($event)">
+
     <table class="table">
       <tr>
         <th>Name</th>
@@ -35,6 +37,19 @@ export class ProjectsListComponent implements OnInit {
   list
 
   constructor(private http: HttpClient) { }
+
+  search(query){
+    if(query){
+      // Gdy zapytanie nie jest puste  - pytamy serwer
+      this.http.get('http://localhost:3000/projects/?q='+query)
+      // aktualizujemy liste
+      .subscribe(list => this.list = list)
+
+    }else{
+      // Gdy pole jest puste - wyswietlamy wszystko
+      this.fetchAll()
+    }
+  }
 
   remove(id){
     // kasujemy element 
