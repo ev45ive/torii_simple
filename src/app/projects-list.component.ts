@@ -14,7 +14,9 @@ import { HttpClient } from "@angular/common/http";
       </tr>
       <tr *ngFor="let project of list">
         <td>{{ project.name }}</td>
-        <td><button [routerLink]="['project-edit',project.id]">Edit</button></td>
+        <td>
+          <button [routerLink]="['project-edit',project.id]">Edit</button>
+        </td>
       </tr>
     </table>
 

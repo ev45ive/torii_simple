@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
   selector: 'app-project-edit',
   template: `
     <p>
-      project-edit works!
+      Project-edit works!
     </p>
     <div>
       <label>Name</label>
