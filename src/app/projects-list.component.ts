@@ -16,6 +16,7 @@ import { HttpClient } from "@angular/common/http";
         <td>{{ project.name }}</td>
         <td>
           <button [routerLink]="['project-edit',project.id]">Edit</button>
+          <button (click)="remove(project.id)">&times;</button>
         </td>
       </tr>
     </table>
@@ -33,13 +34,24 @@ export class ProjectsListComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
+  remove(id){
+    // kasujemy element 
+    this.http.delete('http://localhost:3000/projects/'+id)
+    // aktualizujemy liste aby element zniknal
+    .subscribe(()=> this.fetchAll())
+  }
+
+
+  fetchAll(){
     // tworzymy zapytanie
     this.http.get('http://localhost:3000/projects')
       // subskrybujemy sie na wyniki - przychodzace dane przypisujemy do tablicy this.list
       .subscribe(list => this.list = list)
   }
 
-
+  ngOnInit() {
+    // na starcie pobieramy wszystko
+    this.fetchAll()
+  }
 }
 
