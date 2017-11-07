@@ -7,9 +7,15 @@ import { HttpClient } from "@angular/common/http";
     <p>
       project-create works!
     </p>
-    <div>
+    <div class="form-group">
       <label>Name</label>
-      <input [(ngModel)]="project.name">
+      <input class="form-control" [(ngModel)]="project.name">
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <input class="form-control" [(ngModel)]="project.description">
+    </div>
+    <div>
       <button (click)="save()">Save</button>
     </div>
     <hr>

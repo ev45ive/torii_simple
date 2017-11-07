@@ -2,11 +2,17 @@
   "projects": [
     {
       "id": 1,
-      "name": "Pierwszy Projekt"
+      "name": "Pierwszy Projekt",
+      "description": "Opis"
     },
     {
       "name": "Projekt X",
       "id": 2
+    },
+    {
+      "name": "Test",
+      "description": "Opis",
+      "id": 3
     }
   ]
 }

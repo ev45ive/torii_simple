@@ -10,10 +10,12 @@ import { HttpClient } from "@angular/common/http";
     <table class="table">
       <tr>
         <th>Name</th>
+        <th>Description</th>
         <th></th>
       </tr>
       <tr *ngFor="let project of list">
         <td>{{ project.name }}</td>
+        <td>{{ project.description }}</td>
         <td>
           <button [routerLink]="['project-edit',project.id]">Edit</button>
           <button (click)="remove(project.id)">&times;</button>
