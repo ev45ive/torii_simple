@@ -21,6 +21,21 @@
       "id": 1,
       "projectId": 1,
       "name": "Pierwszy task"
+    },
+    {
+      "name": "Nowe zadania",
+      "projectId": 1,
+      "id": 2
+    },
+    {
+      "name": "Jeszcze jedno!",
+      "projectId": 1,
+      "id": 3
+    },
+    {
+      "name": "Testowe",
+      "projectId": 1,
+      "id": 4
     }
   ]
 }
