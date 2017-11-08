@@ -11,8 +11,12 @@ import { HttpClient } from "@angular/common/http";
     <h1>{{project.name}}</h1>
 
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let task of tasks">{{task.name}}</li>
+      <li class="list-group-item" *ngFor="let task of tasks">
+        {{task.name}}
+        <button [routerLink]="['/task-details', task.id]" class="float-right">Details</button>
+      </li>
     </ul>
+    
     <hr>
     <input class="form-control" placeholder="Nazwa zadania" 
       (keyup.enter)="addTask(taskName)" [(ngModel)]="taskName">
