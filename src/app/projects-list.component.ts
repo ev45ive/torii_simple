@@ -20,6 +20,7 @@ import { HttpClient } from "@angular/common/http";
         <td>{{ project.description }}</td>
         <td>
           <button [routerLink]="['project-edit',project.id]">Edit</button>
+          <button [routerLink]="['project-details',project.id]">Details</button>
           <button (click)="remove(project.id)">&times;</button>
         </td>
       </tr>
@@ -41,7 +42,7 @@ export class ProjectsListComponent implements OnInit {
   search(query){
     if(query){
       // Gdy zapytanie nie jest puste  - pytamy serwer
-      this.http.get('http://localhost:3000/projects/?q='+query)
+      this.http.get('http://localhost:3000/projects/?q=' + query)
       // aktualizujemy liste
       .subscribe(list => this.list = list)
 
@@ -53,7 +54,7 @@ export class ProjectsListComponent implements OnInit {
 
   remove(id){
     // kasujemy element 
-    this.http.delete('http://localhost:3000/projects/'+id)
+    this.http.delete('http://localhost:3000/projects/' + id)
     // aktualizujemy liste aby element zniknal
     .subscribe(()=> this.fetchAll())
   }
